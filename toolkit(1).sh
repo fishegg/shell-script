@@ -1,3 +1,4 @@
+#!/bin/sh
 pre_pkg=
 pkg_tmp=
 pkg=
