@@ -267,20 +267,6 @@ clear_data()
   adb -s ${serial} shell pm clear ${pkg_name}
   if [[ ${choice} = x ]]; then
     adb -s ${serial} shell pm clear com.android.vending
-    if [[ ${pkg_name} = com.recorder.video.magic.capture.gameplay ]]
-    then
-      adb -s ${serial} shell pm clear com.android.vending
-      adb -s ${serial} shell am start com.android.vending/com.android.vending.AssetBrowserActivity
-      adb -s ${serial} shell rm -r /sdcard/CaptureScreenRecorder/.subs
-    fi
-    if [[ ${pkg_name} = qr.code.barcode.maker.scanner.reader ]]
-    then
-      adb -s ${serial} shell rm -r /sdcard/ScannerReader/.subs
-    fi
-    if [[ ${pkg_name} = com.jb.screenrecorder.screen.record.video ]]
-    then
-      adb -s ${serial} shell rm -r /sdcard/GOScreenRecorder/.subs
-    fi
     #adb -s ${serial} shell am start com.android.vending/com.android.vending.AssetBrowserActivity
   fi
   return 6
